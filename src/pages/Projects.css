@@ -1,0 +1,231 @@
+:root {
+  --pass: #22c55e;
+  --fail: #ef4444;
+}
+
+/* page */
+.projectsPage {
+  padding: 22px;
+}
+
+.projectsHeader {
+  margin-bottom: 14px;
+}
+
+.projectsTitle {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: 0.02em;
+}
+
+.projectsSub {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* card (reuses your lumon variables from index.css) */
+.card {
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, var(--panel), var(--panel-2));
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 14px;
+}
+
+.projectsCard {
+  overflow: hidden;
+}
+
+/* table */
+.projectsTable {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* ✅ keeps header + body perfectly aligned */
+}
+
+/* header */
+.projectsTable thead th {
+  padding: 12px;
+  border-bottom: 1px solid var(--line);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+/* body */
+.projectsTable tbody td {
+  padding: 12px;
+  border-bottom: 1px solid rgba(232, 238, 247, 0.08);
+  vertical-align: middle;
+}
+
+.projectsTable tbody tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* ✅ Project column takes remaining space */
+.projectsTable th:nth-child(1),
+.projectsTable td:nth-child(1) {
+  text-align: left;
+  width: 250px;
+}
+
+.projName {
+  font-weight: 650;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ✅ Started / Finished (right aligned + fixed width) */
+.projectsTable th:nth-child(2),
+.projectsTable td:nth-child(2),
+.projectsTable th:nth-child(3),
+.projectsTable td:nth-child(3) {
+  width: auto;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.dateCell {
+  font-size: 12px;
+  color: rgba(232, 238, 247, 0.65);
+}
+
+/* ✅ XP column */
+.projectsTable th:nth-child(4),
+.projectsTable td:nth-child(4) {
+  width: 140px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* ✅ Result column */
+.projectsTable th:nth-child(5),
+.projectsTable td:nth-child(5) {
+  width: 140px;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* status pill */
+.statusPill {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.statusPill.pass {
+  color: var(--pass);
+  background: rgba(34, 197, 94, 0.12);
+  border-color: rgba(34, 197, 94, 0.35);
+}
+
+.statusPill.fail {
+  color: var(--fail);
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.35);
+}
+.statusPill.pending {
+  color: #9fb3c8;
+  background: rgba(96, 165, 250, 0.1);
+  border-color: rgba(96, 165, 250, 0.35);
+}
+.headerRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.lumonLinkBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(0, 0, 0, 0.18);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  transition:
+    transform 120ms ease,
+    border-color 120ms ease,
+    background 120ms ease;
+}
+
+.lumonLinkBtn:hover {
+  transform: translateY(-1px);
+  border-color: rgba(45, 212, 191, 0.45);
+  background: rgba(45, 212, 191, 0.08);
+}
+
+.lumonLinkBtn:active {
+  transform: translateY(0px);
+}
+
+/* ===============================
+   MOBILE — hide date columns
+================================ */
+
+@media (max-width: 764px) {
+  /* hide Started + Finished */
+  .projectsTable th:nth-child(2),
+  .projectsTable td:nth-child(2),
+  .projectsTable th:nth-child(3),
+  .projectsTable td:nth-child(3) {
+    display: none;
+  }
+
+  /* adjust remaining column widths */
+  .projectsTable th:nth-child(4),
+  .projectsTable td:nth-child(4) {
+    width: 110px;
+  }
+
+  .projectsTable th:nth-child(5),
+  .projectsTable td:nth-child(5) {
+    width: 110px;
+  }
+  .projectsTable th:nth-child(1),
+  .projectsTable td:nth-child(1) {
+    width: auto;
+    font-size: 16px;
+  }
+}
+
+/* ===============================
+   SMALL MOBILE — hide XP column
+================================ */
+
+@media (max-width: 500px) {
+  .projectsTable * {
+    font-size: 10px;
+  }
+
+  /* hide XP column (4th column AFTER dates hidden) */
+  .projectsTable th:nth-child(4),
+  .projectsTable td:nth-child(4) {
+    display: none;
+  }
+
+  /* Result becomes last column */
+  .projectsTable th:nth-child(5),
+  .projectsTable td:nth-child(5) {
+    width: 100px;
+    text-align: right;
+  }
+}

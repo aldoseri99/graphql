@@ -1,0 +1,452 @@
+/* Page shell */
+.wellnessPage {
+  width: 100%;
+  display: grid;
+  gap: 16px;
+}
+
+/* Header */
+.wellnessHeader {
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.1));
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+.wellnessMeta {
+  margin: 4px 0 0;
+  color: rgba(232, 238, 247, 0.55);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+}
+
+.wellnessBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(232, 238, 247, 0.1);
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.wellnessDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 18px rgba(45, 212, 191, 0.35);
+}
+
+.wellnessWordmark {
+  letter-spacing: 0.22em;
+  font-weight: 900;
+  font-size: 12px;
+  color: rgba(232, 238, 247, 0.85);
+}
+
+.wellnessTitleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.wellnessTitle {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  color: var(--text);
+}
+
+.wellnessSub {
+  margin: 8px 0 0;
+  color: rgba(232, 238, 247, 0.65);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+}
+
+.wellnessPill {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 6px 10px;
+  border-radius: 999px;
+
+  border: 1px solid rgba(232, 238, 247, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+
+  color: rgba(232, 238, 247, 0.75);
+
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
+.wellnessId{
+  margin: 4px 0 0;
+  color: rgba(232,238,247,0.5);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+
+.wellnessPill::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--accent);
+  opacity: 0.7;
+  margin-right: 8px;
+}
+/* Top layout */
+.wellnessTop {
+  display: grid;
+  grid-template-columns: 1.35fr 0.95fr;
+  gap: 16px;
+  align-items: stretch;
+}
+
+/* Card base */
+.card.wellnessCard {
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, var(--panel), var(--panel-2));
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
+  width: 100%;
+}
+
+/* Shared title (matches your system) */
+.cardTitle {
+  margin: 0 0 12px;
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Key/Value grid */
+.kvGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.kv {
+  border: 1px solid rgba(232, 238, 247, 0.08);
+  background: rgba(0, 0, 0, 0.16);
+  border-radius: 14px;
+  padding: 10px 12px;
+}
+
+.kv span {
+  display: block;
+  font-size: 11px;
+  color: rgba(232, 238, 247, 0.55);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.kv b {
+  display: block;
+  font-size: 14px;
+  font-weight: 900;
+  color: rgba(232, 238, 247, 0.92);
+  font-variant-numeric: tabular-nums;
+  word-break: break-word;
+}
+
+/* Facts card */
+.wellnessFacts {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+}
+.wellnessFacts.clickable {
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.wellnessFacts.clickable:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 0 2px rgba(45, 212, 191, 0.12),
+    0 18px 50px rgba(0, 0, 0, 0.55);
+}
+
+.factsHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.factsSub {
+  margin: 6px 0 0;
+  font-size: 12px;
+  color: rgba(232, 238, 247, 0.55);
+}
+
+.factsTimer {
+  border: 1px solid rgba(96, 165, 250, 0.35);
+  background: rgba(96, 165, 250, 0.1);
+  color: rgba(232, 238, 247, 0.85);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.factsBody {
+  border: 1px solid rgba(232, 238, 247, 0.1);
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 16px;
+  padding: 14px;
+  min-height: 120px;
+  display: grid;
+  align-items: center;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease;
+}
+
+.factsBody.pulse {
+  transform: translateY(-1px);
+  border-color: rgba(96, 165, 250, 0.35);
+}
+
+.factsQuote {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(232, 238, 247, 0.88);
+}
+
+.factsDots {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  opacity: 0.9;
+}
+
+.factsDots .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(232, 238, 247, 0.2);
+  background: rgba(232, 238, 247, 0.06);
+}
+
+.factsDots .dot.active {
+  border-color: rgba(45, 212, 191, 0.55);
+  background: rgba(45, 212, 191, 0.22);
+  box-shadow: 0 0 14px rgba(45, 212, 191, 0.25);
+}
+
+.factsFineprint {
+  margin: 0;
+  font-size: 12px;
+  color: rgba(232, 238, 247, 0.5);
+  text-align: center;
+}
+
+.wellnessOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(12px);
+  display: grid;
+  place-items: center;
+  z-index: 9999;
+  padding: 24px;
+}
+.wellnessOverlay::after{
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 400px;     
+  height: 400px;
+
+  background: url("/lumon.png") center/contain no-repeat;
+
+  opacity: 0.20;
+  mix-blend-mode: multiply;
+
+  filter:
+    blur(3px)
+    drop-shadow(0 14px 28px rgba(0,0,0,0.55));
+
+  pointer-events: none;
+}
+
+
+.sessionClose {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  border: 1px solid rgba(232, 238, 247, 0.18);
+  background: rgba(0, 0, 0, 0.18);
+  color: rgba(232, 238, 247, 0.9);
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.sessionClose:hover {
+  border-color: rgba(45, 212, 191, 0.45);
+}
+
+.wellnessLine {
+  max-width: 800px;
+  text-align: center;
+  font-size: 30px;
+  line-height: 1.7;
+  color: rgba(232, 238, 247, 0.92);
+  letter-spacing: 0.01em;
+
+  transition:
+    opacity 380ms ease,
+    transform 380ms ease;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.wellnessLine.out {
+  opacity: 0;
+  transform: translateY(4px);
+}
+
+.wellnessLine.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.startSessionBtn {
+  position: relative;
+  border: 1px solid rgba(45, 212, 191, 0.35);
+  background: linear-gradient(
+    180deg,
+    rgba(45, 212, 191, 0.16),
+    rgba(45, 212, 191, 0.06)
+  );
+  color: var(--text);
+
+  padding: 8px 16px;
+  border-radius: 999px;
+
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.2s ease,
+    background 0.25s ease;
+}
+
+.startSessionBtn:hover {
+  border-color: rgba(45, 212, 191, 0.7);
+  box-shadow:
+    0 0 0 2px rgba(45, 212, 191, 0.12),
+    0 6px 20px rgba(0, 0, 0, 0.35);
+  background: linear-gradient(
+    180deg,
+    rgba(45, 212, 191, 0.25),
+    rgba(45, 212, 191, 0.1)
+  );
+  transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .wellnessTop {
+    grid-template-columns: 1fr;
+  }
+  .kvGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.wellnessTitleRow{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 12px 16px;
+  margin-top: 12px;
+}
+
+/* title can wrap without pushing layout */
+.wellnessTitle{
+  margin: 0;
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  line-height: 1.15;
+
+  /* allow wrapping safely */
+  overflow-wrap: anywhere;
+}
+
+/* optional: make MDR id look less "shouty" */
+.wellnessTitle .empId{
+  opacity: 0.75;
+  font-weight: 800;
+}
+
+.wellnessPill{
+  justify-self: end;
+  align-self: start;
+
+  display: inline-flex;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(232,238,247,0.14);
+  background: rgba(0,0,0,0.18);
+  color: rgba(232,238,247,0.85);
+
+  font-weight: 900;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ===== responsive ===== */
+@media (max-width: 700px){
+  .wellnessTitleRow{
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .wellnessPill{
+    justify-self: start; 
+  }
+
+  .wellnessTitle{
+    font-size: 22px;
+  }
+}

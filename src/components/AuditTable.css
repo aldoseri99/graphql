@@ -1,0 +1,198 @@
+/* KEEP THIS (as requested) */
+.auditTableWrap {
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, var(--panel), var(--panel-2));
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px;
+  position: relative;
+  width: 100%; /* important so it can stretch in mobile */
+}
+
+/* ===== Header row (title + toggle) ===== */
+.auditTableHeader{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(232,238,247,0.08);
+}
+
+.auditTitle{
+  margin: 0;
+  font-size: 13px;
+  color: rgba(232,238,247,0.78);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.auditToggle{
+  border: 1px solid rgba(232,238,247,0.14);
+  background: rgba(0,0,0,0.18);
+  color: rgba(232,238,247,0.85);
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 800;
+  cursor: pointer;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+}
+
+.auditToggle:hover{
+  border-color: rgba(45,212,191,0.55);
+  box-shadow: 0 0 0 2px rgba(45,212,191,0.12);
+  transform: translateY(-1px);
+}
+
+.auditToggle:active{
+  transform: translateY(0);
+}
+
+/* ===== Table ===== */
+.auditTable{
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 14px;
+
+  /* gives “terminal” precision */
+  table-layout: fixed;
+}
+
+/* Head cells */
+.auditTable thead th{
+  padding: 12px 12px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(232,238,247,0.6);
+  font-weight: 900;
+  border-bottom: 1px solid rgba(232,238,247,0.10);
+  white-space: nowrap;
+}
+
+/* Body cells */
+.auditTable tbody td{
+  padding: 12px 12px;
+  border-bottom: 1px solid rgba(232,238,247,0.06);
+  vertical-align: middle;
+}
+
+/* Row hover */
+.auditTable tbody tr{
+  transition: background 0.2s ease;
+}
+
+.auditTable tbody tr:hover{
+  background: rgba(255,255,255,0.03);
+}
+
+/* Alignment helpers (apply to th + td) */
+.auditTable .right{ text-align: right; }
+.auditTable .center{ text-align: center; }
+
+/* Column sizing (keeps header aligned perfectly) */
+.auditTable th:nth-child(1),
+.auditTable td:nth-child(1){
+  width: 52%;
+}
+
+.auditTable th:nth-child(2),
+.auditTable td:nth-child(2){
+  width: 24%;
+}
+
+.auditTable th:nth-child(3),
+.auditTable td:nth-child(3){
+  width: 24%;
+}
+
+/* Project name */
+.projName{
+  color: var(--text);
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Amount + arrow inline */
+.amount{
+  color: rgba(232,238,247,0.86);
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.amount .gain{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  width: 28px;
+  height: 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(232,238,247,0.10);
+  background: rgba(0,0,0,0.18);
+}
+
+/* Arrow colors */
+.gain.up{
+  color: #22c55e;
+  border-color: rgba(34,197,94,0.25);
+  background: rgba(34,197,94,0.10);
+}
+
+.gain.down{
+  color: #ef4444;
+  border-color: rgba(239,68,68,0.25);
+  background: rgba(239,68,68,0.10);
+}
+
+/* Date */
+.date{
+  color: rgba(232,238,247,0.65);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* Empty */
+.auditEmpty{
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* ===== Responsive: make it feel good on mobile ===== */
+@media (max-width: 700px){
+  .auditTableWrap{
+    padding: 14px;
+  }
+
+  /* hide date column */
+  .auditTable th:nth-child(3),
+  .auditTable td:nth-child(3){
+    display: none;
+  }
+
+  /* give project more room */
+  .auditTable th:nth-child(1),
+  .auditTable td:nth-child(1){
+    width: 65%;
+  }
+  .auditTable th:nth-child(2),
+  .auditTable td:nth-child(2){
+    width: 35%;
+  }
+
+  .projName{
+    font-size: 13px;
+  }
+}

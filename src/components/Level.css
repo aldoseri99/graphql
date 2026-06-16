@@ -1,0 +1,202 @@
+/* ===============================
+   LEVEL CARD
+================================ */
+
+.levelCard{
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, var(--panel), var(--panel-2));
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
+  width: 100%;
+
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+}
+
+.levelCard:hover{
+  border-color: rgba(96,165,250,0.55);
+  box-shadow:
+    0 0 0 2px rgba(96,165,250,0.10),
+    0 18px 50px rgba(0,0,0,0.55);
+  transform: translateY(-2px);
+}
+
+/* ===============================
+   HEADER
+================================ */
+
+.levelHeader{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+
+  padding-bottom: 12px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid rgba(232,238,247,0.10);
+}
+
+.levelTitle{
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+}
+
+.levelSub{
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: rgba(232,238,247,0.65);
+}
+
+.levelPill{
+  display: inline-flex;
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(45,212,191,0.35);
+  background: rgba(45,212,191,0.08);
+  color: rgba(232,238,247,0.9);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ===============================
+   BODY LAYOUT
+================================ */
+
+.levelBody{
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 14px;
+  align-items: stretch;
+}
+
+/* ===============================
+   CHART WRAP
+================================ */
+
+.levelChartWrap{
+  display: grid;
+  place-items: center;
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid rgba(232,238,247,0.08);
+  background: rgba(0,0,0,0.16);
+  padding: 12px;
+  overflow: hidden;
+}
+
+/* responsive SVG sizing */
+.levelSvg{
+  display: block;
+  width: min(420px, 100%);
+  height: auto;
+}
+
+/* optional: reduce jaggedness */
+.levelSvg text{
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+}
+
+/* ===============================
+   PANEL
+================================ */
+
+.levelPanel{
+  border-radius: 14px;
+  border: 1px solid rgba(232,238,247,0.10);
+  background: rgba(0,0,0,0.18);
+  padding: 12px;
+  display: grid;
+  align-content: start;
+  gap: 12px;
+}
+
+.levelPanelTitle{
+  color: var(--muted);
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  font-size: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(232,238,247,0.08);
+}
+
+/* stats grid */
+.levelGrid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.levelStat{
+  border: 1px solid rgba(232,238,247,0.08);
+  background: rgba(0,0,0,0.16);
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.levelStat span{
+  display: block;
+  font-size: 11px;
+  color: rgba(232,238,247,0.55);
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.levelStat b{
+  display: block;
+  color: rgba(232,238,247,0.92);
+  font-size: 14px;
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+  word-break: break-word;
+}
+
+.levelWide{
+  grid-column: 1 / -1;
+}
+
+/* subtle quote */
+.levelNote{
+  margin: 0;
+  font-size: 12px;
+  color: rgba(232,238,247,0.55);
+  line-height: 1.4;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 1000px){
+  .levelBody{
+    grid-template-columns: 1fr;
+  }
+
+  .levelChartWrap{
+    padding: 10px;
+  }
+
+  .levelPanel{
+    padding: 12px;
+  }
+}
+
+@media (max-width: 520px){
+  .levelCard{
+    padding: 14px;
+  }
+
+  .levelSub{
+    display: none;
+  }
+
+  .levelGrid{
+    grid-template-columns: 1fr;
+  }
+}

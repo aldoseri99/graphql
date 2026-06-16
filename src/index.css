@@ -1,0 +1,129 @@
+/* src/index.css */
+
+/* 1) Load font FIRST */
+@font-face {
+  font-family: "Nimbus Sans";
+  src: url("/nimbus-sans-l.regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root{
+  --bg: #07090c;
+  --panel: rgba(14, 18, 26, 0.78);
+  --panel-2: rgba(10, 14, 20, 0.6);
+  --text: #e8eef7;
+  --muted: rgba(232, 238, 247, 0.68);
+  --line: rgba(232, 238, 247, 0.12);
+  --accent: #2dd4bf;
+  --accent-2: #60a5fa;
+  --shadow: 0 18px 60px rgba(0,0,0,0.55);
+  --radius: 18px;
+}
+
+/* optional but very helpful to stop layout surprises */
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+  font-family: "Nimbus Sans", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+html, body{
+  height: 100%;
+}
+
+body{
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden; /* prevents tiny accidental horizontal scroll */
+}
+
+/* APP BACKGROUND */
+.lumon-app{
+  min-height: 100vh;
+  background:
+    radial-gradient(1200px 800px at 20% 10%, rgba(96,165,250,0.18), transparent 60%),
+    radial-gradient(900px 600px at 80% 30%, rgba(45,212,191,0.14), transparent 55%),
+    var(--bg);
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 15px;
+}
+
+/* GRID BACKDROP */
+.lumon-bg{
+  position: absolute;
+  inset: 0;
+  background-image:
+  linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
+  linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 64px 64px;
+  opacity: 0.55;
+  pointer-events: none;
+  mask-image: radial-gradient(circle at 50% 40%, black 45%, transparent 78%);
+}
+
+/* keep content above background */
+.lumon-app > *:not(.lumon-bg){
+  position: relative;
+  z-index: 1;
+}
+
+/* 2) Container should NOT be 100vw */
+.lumon-container{
+  width: 100%;
+  max-width: 1500px;     /* nice readable width */
+  margin: 0 auto;       /* responsive padding */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Home layout */
+.Home{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Old topbar (if you still use it) */
+.homeTopBar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  height: 70px;
+  border-bottom: 1px solid rgba(232,238,247,0.08);
+}
+
+.homeTitle{
+  font-size: 14px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Logout button (if still used anywhere) */
+.logoutBtn{
+  border: 1px solid rgba(232,238,247,0.12);
+  background: rgba(0,0,0,0.18);
+  color: rgba(232,238,247,0.8);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.logoutBtn:hover{
+  border-color: rgba(239,68,68,0.5);
+  color: #ef4444;
+  box-shadow: 0 0 0 2px rgba(239,68,68,0.12);
+}
+
+.logoutBtn:active{
+  transform: scale(0.97);
+}

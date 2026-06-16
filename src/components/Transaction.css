@@ -1,0 +1,11 @@
+.row{
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 1000px){
+  .row{
+    flex-direction: column;
+    gap: 12px;
+  }
+}

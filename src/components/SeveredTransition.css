@@ -1,0 +1,31 @@
+.severedScreen {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;
+
+  animation: fadeIn 0.8s ease;
+}
+
+.severedText {
+  color: rgba(232,238,247,0.85);
+  font-size: 20px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-weight: 600;
+
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+@keyframes pulse {
+  0%,100% { opacity: 0.4 }
+  50% { opacity: 1 }
+}

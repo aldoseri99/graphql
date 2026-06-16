@@ -1,0 +1,219 @@
+/* ===============================
+   PAGE BACKGROUND
+================================ */
+
+.login-page{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 20px;
+}
+
+/* subtle severance grid */
+.login-bg-grid{
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* ===============================
+   CARD
+================================ */
+
+.lumon-card{
+  position: relative;
+  z-index: 2;
+  width: 420px;
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, var(--panel), var(--panel-2));
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px;
+  text-align: center;
+
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.lumon-card:hover{
+  border-color: rgba(45,212,191,0.35);
+  box-shadow:
+    0 0 0 2px rgba(45,212,191,0.08),
+    0 20px 60px rgba(0,0,0,0.55);
+}
+
+/* ===============================
+   LOGO
+================================ */
+
+.login-logo{
+  width: 160px;
+  margin-bottom: 18px;
+  opacity: 0.8;
+  filter: drop-shadow(0 0 10px rgba(45,212,191,0.2));
+}
+
+/* ===============================
+   HEADER
+================================ */
+
+.lumon-title{
+  margin: 0 0 6px;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+.lumon-subtitle{
+  margin: 0 0 22px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* ===============================
+   NOTICE (ERROR)
+================================ */
+
+.lumon-notice{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin: 0 0 16px;
+  padding: 10px 12px;
+
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(0,0,0,0.18);
+
+  text-align: left;
+}
+
+.lumon-noticeDot{
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  flex: 0 0 auto;
+  background: rgba(255,255,255,0.35);
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.08);
+}
+
+.lumon-noticeText{
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: rgba(232,238,247,0.82);
+  line-height: 1.35;
+}
+
+/* error flavor */
+.lumon-notice--error{
+  border-color: rgba(239,68,68,0.35);
+  background: rgba(239,68,68,0.10);
+}
+
+.lumon-notice--error .lumon-noticeDot{
+  background: rgba(239,68,68,0.85);
+  box-shadow: 0 0 0 3px rgba(239,68,68,0.16);
+}
+
+.lumon-notice--error .lumon-noticeText{
+  color: rgba(255,255,255,0.90);
+}
+
+/* ===============================
+   FORM
+================================ */
+
+.lumon-form{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+}
+
+.lumon-field label{
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.lumon-field input{
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(232,238,247,0.15);
+  background: rgba(0,0,0,0.25);
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lumon-field input:focus{
+  border-color: rgba(45,212,191,0.6);
+  box-shadow: 0 0 0 3px rgba(45,212,191,0.15);
+}
+
+/* ===============================
+   BUTTON
+================================ */
+
+.lumon-btn{
+  margin-top: 6px;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(45,212,191,0.35);
+  background: rgba(45,212,191,0.15);
+  color: var(--text);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.lumon-btn:hover{
+  background: rgba(45,212,191,0.25);
+  border-color: rgba(45,212,191,0.6);
+  box-shadow: 0 0 12px rgba(45,212,191,0.2);
+}
+
+.lumon-btn:active{
+  transform: scale(0.97);
+}
+
+/* disabled state */
+.lumon-btn:disabled{
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ===============================
+   FINE PRINT
+================================ */
+
+.lumon-fineprint{
+  margin-top: 14px;
+  font-size: 11px;
+  color: rgba(232,238,247,0.5);
+  line-height: 1.5;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 600px){
+  .lumon-card{
+    width: 100%;
+  }
+}

@@ -1,0 +1,184 @@
+/* ===============================
+   CARD BASE
+================================ */
+
+.auditCard{
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, var(--panel), var(--panel-2));
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px;
+  position: relative;
+  width: 100%; /* important so it can stretch in mobile */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.2s ease;
+}
+
+/* desktop sizing (plays nice in your .row flex layout) */
+.auditSingle{
+  flex: 0 0 380px;  /* matches your row desktop setup */
+  max-width: 380px;
+}
+
+/* hover */
+.auditCard:hover{
+  border-color: rgba(45, 212, 191, 0.45);
+  box-shadow:
+    0 0 0 2px rgba(45, 212, 191, 0.12),
+    0 18px 50px rgba(0,0,0,0.55);
+  transform: translateY(-2px);
+}
+
+/* ===============================
+   HEADER
+================================ */
+
+.auditHeader{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(232,238,247,0.10);
+}
+
+.auditKicker{
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  font-size: 12px;
+}
+
+.auditBig{
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ===============================
+   STATS
+================================ */
+
+.auditStats{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 14px 0 16px;
+}
+
+.statBox{
+  border: 1px solid rgba(232,238,247,0.10);
+  border-radius: 14px;
+  padding: 12px;
+  background: rgba(0,0,0,0.18);
+}
+
+.statLabel{
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.statValue{
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ===============================
+   BLOCK
+================================ */
+
+.auditBlock{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+.auditBlockTitle{
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.auditViz{
+  display: grid;
+  place-items: start;
+  
+}
+
+/* make svg responsive */
+.auditViz svg{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===============================
+   MOBILE RESPONSIVE
+================================ */
+
+@media (max-width: 1000px){
+  .auditSingle{
+    flex: unset;
+    max-width: none;
+    width: 100%; /* ✅ full width on mobile */
+  }
+
+  .auditStats{
+    grid-template-columns: 1fr; /* stack up/down */
+  }
+
+  .auditBig{
+    font-size: 24px;
+  }
+}
+:root{
+  --pass: #22c55e;
+  --fail: #ef4444;
+}
+
+/* svg text */
+.upDownLabel{
+  fill: var(--muted);
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.upDownValue{
+  fill: rgba(232,238,247,0.8);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+.upText{ fill: rgba(34,197,94,0.9); }
+.downText{ fill: rgba(239,68,68,0.9); }
+
+/* track behind bars */
+.upDownTrack{
+  fill: rgba(255,255,255,0.08);
+  stroke: rgba(232,238,247,0.10);
+  stroke-width: 1;
+}
+
+/* actual bars */
+.upBar{
+  fill: rgba(34,197,94,0.9);
+}
+
+.downBar{
+  fill: rgba(239,68,68,0.85);
+}
