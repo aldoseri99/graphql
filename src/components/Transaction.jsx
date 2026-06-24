@@ -3,7 +3,7 @@ import { XpProgress } from "./XpProgress";
 import './Transaction.css'
 import { AuditTable } from './AuditTable';
 
-export const Transaction = ({ transaction, token }) => {
+export const Transaction = ({ transaction, token, user }) => {
   const xpProjects = (arr = []) =>
   arr.filter(proj => {
     return proj.type === 'xp' && proj.eventId === 763 
@@ -19,7 +19,7 @@ return (
     {transaction?.length === 0 && <p>Nothing here</p>}
     <div className="row">
       <Audit audit={getAudits(transaction)}/>
-      <XpProgress arr={xpProjects(transaction)}/>
+      <XpProgress arr={xpProjects(transaction)} user={user}/>
     </div>
     <AuditTable audit={getAudits(transaction)}/>
     </>

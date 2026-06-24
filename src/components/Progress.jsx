@@ -67,14 +67,12 @@ function PassFailDonut({ progress, size = 140, stroke = 18 }) {
   const fail = (progress || []).filter((p) => Number(p.grade) <= 1).length;
   const pass = total - fail;
 
-  // avoid division by zero
   const passPct = total ? pass / total : 0;
   const failPct = total ? fail / total : 0;
 
   const r = (size - stroke) / 2;
   const c = 2 * Math.PI * r;
 
-  // stroke-dashoffset draws the "pass" segment first
   const passLen = c * passPct;
 
   const center = size / 2;
@@ -86,7 +84,6 @@ const TRACK = "rgba(255,255,255,0.12)";
 return (
   <div className="donutWrap">
     <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
-      {/* background track */}
       <circle
         cx={center}
         cy={center}
@@ -96,7 +93,6 @@ return (
         strokeWidth={stroke}
       />
 
-      {/* FAIL segment */}
       <circle
         cx={center}
         cy={center}
@@ -110,7 +106,6 @@ return (
         strokeDasharray={`${c} ${c}`}
       />
 
-      {/* PASS segment (overlay) */}
       <circle
         cx={center}
         cy={center}
@@ -123,7 +118,6 @@ return (
         strokeDasharray={`${passLen} ${c - passLen}`}
       />
 
-      {/* hole + center label */}
       <circle cx={center} cy={center} r={r - stroke / 2} fill="transparent" />
 
       <text

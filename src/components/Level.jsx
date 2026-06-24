@@ -107,7 +107,7 @@ export const LevelPanel = ({ transaction = [] }) => {
 
         <div className="levelStat levelWide">
           <span>XP Gained</span>
-          <b>{lastProj.amount}</b>
+          <b>{formatXP(lastProj.amount)}</b>
         </div>
       </div>
 

@@ -55,7 +55,7 @@ function App() {
             path="/"
             element={
               <ProtectedRoute token={token}>
-                <Home token={token} />{' '}
+                <Home token={token} />
               </ProtectedRoute>
             }
           />

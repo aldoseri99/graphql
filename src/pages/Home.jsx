@@ -62,9 +62,9 @@ export const Home = ({ token }) => {
             {data && data.user && data.transaction ? (
               <>
                 <ProfileCard user={data.user[0]} prog={data.progress} />
-                <LevelStats transaction={data.transaction} />
+                <LevelStats transaction={data.transaction}  />
                 <Progress progress={data.progress} />
-                <Transaction transaction={data.transaction}/>
+                <Transaction transaction={data.transaction} user={data.user[0]}/>
               </>
             ) : (
               <></>
